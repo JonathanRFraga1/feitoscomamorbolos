@@ -4,17 +4,17 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="Hotsite da confeitaria caseira Feitos com Amor">
-        <meta name="keywords" content="Bolos Caseiros, Bolos Decorados, Bolos Personalizados, Trufas, Salgados de Festa, Bolo em Erechim, Bolo de Aniverário, Bolos no Pote, Bolos Sob Encomenda, Cento de Salgados" />
+        <meta name="keywords" content="Bolos Caseiros, Bolos Decorados, Bolos Personalizados, Trufas, Salgados de Festa, Bolo em Erechim, Bolo de Aniverário, Bolos no Pote, Bolos Sob Encomenda, Cento de Salgados, Bolos Caseiros em Erechim, Bolos para encomenda em Erechim" />
         <meta name="author" content="Jonathan Rossetto de Fraga" />
         <title>Feitos com Amor - Bolos, Doces e Salgados</title>
-        <link rel="icon" type="image/x-icon" href="assets/img/favicon.webp" />
+        <link rel="icon" href="./assets/img/favicon.ico" />
         <!-- Font Awesome icons (free version)-->
-        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <script async src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
         <!-- Google fonts-->
         <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
+        <link href="./css/new-style.css" rel="stylesheet" />
         <link rel="canonical" href="https://feitoscomamorbolos.com.br"/>
     </head>
     <body id="page-top">
@@ -38,7 +38,6 @@
                 <div class="container px-5 font-brand">
                     <h1 class="masthead-heading mb-0">Feitos com Amor</h1>
                     <h2 class="masthead-subheading mb-0">Bolos e Salgados</h2>
-<!--                    <a class="btn btn-primary btn-xl rounded-pill mt-5" href="#scroll">Saiba Mais</a>-->
                 </div>
             </div>
         </header>
@@ -47,7 +46,7 @@
             <div class="container px-5">
                 <div class="row gx-5 align-items-center">
                     <div class="col-lg-6 order-lg-2">
-                        <div class="p-5"><img class="img-fluid rounded-circle" src="assets/img/bolo.webp" alt="Bolo caseiro com decoração personalizada" /></div>
+                        <div class="p-5"><img class="img-fluid rounded-circle" src="assets/img/bolo.webp" alt="Bolo caseiro com decoração personalizada" loading=“lazy”/></div>
                     </div>
                     <div class="col-lg-6 order-lg-1">
                         <div class="p-5">
@@ -63,7 +62,7 @@
             <div class="container px-5">
                 <div class="row gx-5 align-items-center">
                     <div class="col-lg-6">
-                        <div class="p-5"><img class="img-fluid rounded-circle" src="assets/img/salgados.webp" alt="Salgados de festa de aniversário" /></div>
+                        <div class="p-5"><img class="img-fluid rounded-circle" src="assets/img/salgados.webp" alt="Salgados de festa de aniversário" loading="lazy"/></div>
                     </div>
                     <div class="col-lg-6">
                         <div class="p-5">
@@ -79,7 +78,7 @@
             <div class="container px-5">
                 <div class="row gx-5 align-items-center">
                     <div class="col-lg-6 order-lg-2">
-                        <div class="p-5"><img class="img-fluid rounded-circle" src="assets/img/bolos_no_pote.webp" alt="Bolos no Pote de diversos sabores" /></div>
+                        <div class="p-5"><img class="img-fluid rounded-circle" src="assets/img/bolos_no_pote.webp" alt="Bolos no Pote de diversos sabores" loading="lazy"/></div>
                     </div>
                     <div class="col-lg-6 order-lg-1">
                         <div class="p-5">
@@ -116,11 +115,34 @@
         </section>
         <!-- Footer-->
         <footer class="py-5 bg-brand">
-            <div class="container px-5"><p class="m-0 text-center text-white small">Copyright &copy; <a href="https://jonathanrossetto.dev" target="_blank" class="text-white">Jonathan Rossetto de Fraga</a> - 2023</p></div>
+            <div class="container px-5"><p class="m-0 text-center text-black small">Desenvolvido Por <a href="https://jonathanrossetto.dev" target="_blank" class="text-black link-dev">Jonathan Rossetto de Fraga</a> - 2023</p></div>
         </footer>
         <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script async src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
+        <script async type="module">
+            import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js'
+        
+            // If you enabled Analytics in your project, add the Firebase SDK for Google Analytics
+            import { getAnalytics } from 'https://www.gstatic.com/firebasejs/10.4.0/firebase-analytics.js'
+        
+            // Add Firebase products that you want to use
+            import { getAuth } from 'https://www.gstatic.com/firebasejs/10.4.0/firebase-auth.js'
+            import { getFirestore } from 'https://www.gstatic.com/firebasejs/10.4.0/firebase-firestore.js'
+
+            const firebaseConfig = {
+                apiKey: "AIzaSyBgpiZYDisv8iSRyHN-13RDkhFxh02b0PI",
+                authDomain: "feitoscomamor-452f8.firebaseapp.com",
+                projectId: "feitoscomamor-452f8",
+                storageBucket: "feitoscomamor-452f8.appspot.com",
+                messagingSenderId: "101857312209",
+                appId: "1:101857312209:web:7d8ffdd8e9392517a234f0",
+                measurementId: "G-7Y8NZX7ZF3"
+            };
+
+            // Initialize Firebase
+            const app = initializeApp(firebaseConfig);
+            const analytics = getAnalytics(app);
+        </script>
     </body>
 </html>
